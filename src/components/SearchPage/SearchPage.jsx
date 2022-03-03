@@ -10,7 +10,7 @@ function SearchPage() {
     const dispatch = useDispatch();
 
     // react useState for searchedImages to be locally stored in
-    const [searchedImages, setSearchedImages] = useState([]);
+    const [searchedImages, setSearchedImages] = useState([ {image: 'test_id' }]);
 
     // calling the searchedImagesReducer
     const addSearchedImages = () => {
