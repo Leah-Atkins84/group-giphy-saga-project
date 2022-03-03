@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
+import createSagaMiddleware from 'redux-saga';
 
 // Redux
 import { createStore, combineReducers, applyMiddleware } from 'redux';
