@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import SearchBar from '../SearchBar/SearchBar';
-import SearchItems from '../SearchItems/SearchItems';
+import SearchItem from '../SearchItem/SearchItem';
 
 function SearchPage() {
 
@@ -32,7 +32,7 @@ function SearchPage() {
             <SearchBar />
 
             {searchedImages.map((image) => {
-                <SearchItems key={image.id} image={image} />
+                <SearchItem key={image.id} image={image} />
             })}
 
         </>

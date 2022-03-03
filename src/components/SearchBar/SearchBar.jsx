@@ -1,8 +1,10 @@
 import React from "react";
 import axios from 'axios';
-import {dispatch} from "react";
+import { useDispatch } from 'react-redux';
 
 function SearchBar() {
+
+    const dispatch = useDispatch();
 
     const [search, setSearch] = useState([]);
 
