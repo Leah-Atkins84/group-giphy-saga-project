@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+import { takeEvery, put } from 'redux-saga/effects';
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -42,7 +43,7 @@ const reduxStore = createStore(
     combineReducers({
         searchedImagesReducer
     }),
-    applyMiddleware(watcherSaga, logger)
+    applyMiddleware(sagaMiddleware, logger)
 );
 
 sagaMiddleware.run(watcherSaga);
