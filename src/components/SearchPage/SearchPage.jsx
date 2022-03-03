@@ -1,16 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import axios from 'axios'
-import Button from '@mui/material/Button';
-import { useHistory } from 'react-router-dom';
-import ButtonBack from '../ButtonBack/ButtonBack';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import SearchBar from '../SearchBar/SearchBar';
+import SearchItems from '../SearchItems/SearchItems';
 
 function SearchPage() {
 
     const dispatch = useDispatch();
 
-    // react useState for feedback from the database to be stored in
+    // react useState for searchedImages to be locally stored in
     const [searchedImages, setSearchedImages] = useState([]);
+
+    // calling the searchedImagesReducer
+    const addSearchedImages = () => {
+        dispatch({ type: 'ADD_SEARCHED_IMAGES', payload: response.data })
+        setSearchedImages(response.data)
+    }
+
+    // upon page load, images from the searchedImagesReducer will be fetched
+    useEffect(() => {
+        console.log('in useEffect');
+        addSearchedImages();
+        console.log('searchedImages on SearchPage is', { searchedImages })
+    }, []);
 
     return (
         <>
