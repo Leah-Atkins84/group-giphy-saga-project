@@ -10,7 +10,7 @@ function App(props) {
       <div className='links'>
         <ul>
           <li>
-            <Link to='/api/category'>Search</Link>
+            <Link to='/'>Search</Link>
           </li>
           <li>
             <Link to='/api/favorites'>Favorites</Link>
