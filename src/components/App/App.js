@@ -23,7 +23,7 @@ function App(props) {
         <h1>Giphy Search!</h1>
       </div>
 
-      <Route path="/api/category" exact>
+      <Route path="/" exact>
         <SearchPage />
       </Route>
       <Route path="/api/favorites">

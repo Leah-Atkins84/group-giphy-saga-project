@@ -29,16 +29,16 @@ function SearchPage() {
 
         console.log('searchedImages is:', searchedImages);
     return (
-        <>
+        <div>
             <h2>SEARCH FOR SUPA GIFS!</h2>
 
             <SearchBar />
 
-            {searchedImages.map((image) => {
+            {searchedImages.map((image) => (
                 <SearchItem key={image.id} image={image} />
-            })}
+            ))}
 
-        </>
+        </div>
     )
 }
 
