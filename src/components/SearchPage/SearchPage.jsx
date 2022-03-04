@@ -21,13 +21,13 @@ function SearchPage() {
     // upon page load, images from the searchedImagesReducer will be fetched
     useEffect(() => {
         console.log('in useEffect');
-        addSearchedImages();
+        // addSearchedImages();
         console.log('searchedImages on SearchPage is', { searchedImages })
     }, []);
 
     return (
         <>
-            <H2>SEARCH FOR SUPA GIFS!</H2>
+            <h2>SEARCH FOR SUPA GIFS!</h2>
 
             <SearchBar />
 

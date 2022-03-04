@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', (req, res) => {
+    const searchTerm = req.body
     axios.get(`http://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${searchTerm}`)
     
     .then(response => res.send(response.data))
