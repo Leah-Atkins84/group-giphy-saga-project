@@ -11,7 +11,7 @@ function App(props) {
       <div className='links'>
         <ul>
           <li>
-            <Link to='/api/category'>Search</Link>
+            <Link to='/'>Search</Link>
           </li>
           <li>
             <Link to='/api/favorites'>Favorites</Link>
@@ -24,7 +24,7 @@ function App(props) {
         <h1>Giphy Search!</h1>
       </div>
 
-      <Route path="/api/category" exact>
+      <Route path="/" exact>
         <SearchPage />
         <Buttons />
       </Route>
