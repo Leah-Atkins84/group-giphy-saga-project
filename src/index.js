@@ -26,7 +26,7 @@ const searchedImagesReducer = (state = [], action) => {
 function* fetchSearchedImages(action) {
     try {
         const imagesResponse = yield axios.post('/api/search', action.payload);
-        yield put ({ type: 'ADD_SEARCHED_IMAGES', payload: imagesResponse.data}); 
+        yield put ({ type: 'ADD_SEARCHED_IMAGES', payload: imagesResponse.data.data}); 
     } catch (error) {
         console.log('Error fetching images', error);
     }
