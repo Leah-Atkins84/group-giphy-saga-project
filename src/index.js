@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
 import createSagaMiddleware from 'redux-saga';
+import axios from 'axios';
 
 // Redux
 import { createStore, combineReducers, applyMiddleware } from 'redux';
@@ -22,9 +23,9 @@ const searchedImagesReducer = (state = [], action) => {
 
 // saga for getting searched images
 // triggers on 'FETCH_SEARCHED_IMAGES'
-function* fetchSearchedImages() {
+function* fetchSearchedImages(action) {
     try {
-        const imagesResponse = yield axios.get('/api/search');
+        const imagesResponse = yield axios.post('/api/search', action.payload);
         yield put ({ type: 'ADD_SEARCHED_IMAGES', payload: imagesResponse.data}); 
     } catch (error) {
         console.log('Error fetching images', error);
