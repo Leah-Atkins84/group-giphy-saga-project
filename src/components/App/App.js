@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import './App.css';
 import FavsPage from '../FavsPage/FavsPage';
 import SearchPage from '../SearchPage/SearchPage';
+import Buttons from '../Buttons/Buttons';
 
 function App(props) {
   return (
@@ -25,6 +26,7 @@ function App(props) {
 
       <Route path="/api/category" exact>
         <SearchPage />
+        <Buttons />
       </Route>
       <Route path="/api/favorites">
         <FavsPage />
